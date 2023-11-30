@@ -1,0 +1,60 @@
+.header-post
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.pagename-img
+{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.pagename-img img
+{
+    width:40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.pagename-img span
+{
+    color:white;
+    padding:6px;
+}
+
+
+.body-post img
+{
+    width: 100vw;
+    height: 60vh;
+}
+
+.post-actions
+{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.post-action-lcs
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.post-action-save
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.post-action-lcs,.post-action-save div{
+    padding: 5px;
+}

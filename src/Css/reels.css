@@ -1,0 +1,59 @@
+.reel-head
+{
+    color:white;
+    padding:10px;
+    z-index: 100;
+    position: absolute;
+}
+
+.reel-head div
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reel-head i{
+    margin-left: 70vw;
+    }
+
+.reel-head span{
+    font-size:22px;
+}
+
+.reel-videos-container{
+    touch-action:none;
+}
+
+.reel
+{
+    transition: .5s;
+}
+
+.reel video
+{
+    height: 100vh;
+    width:100vw;
+    top:0;
+    left:0;
+    filter: hue-rotate(30deg);
+    /* position: absolute; */
+    transition: .5s;
+}
+
+.mute-unmute-icon
+{
+   margin-top: 70%;
+   margin-left: 43%;
+   position: absolute;
+   z-index: 2000;  
+   transform: scale(0);
+   transition: .5s;
+}
+
+.mute-unmute-icon i{
+    background-color: rgba(0,0,0,.6);
+    padding:15px;
+    border-radius: 50%;
+
+}

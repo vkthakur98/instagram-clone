@@ -1,0 +1,36 @@
+.footer-icons
+{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100vw;
+}
+
+.footer-icons div{
+    padding: 10px;
+}
+
+.footer-icons div i{
+    color:white;
+}
+
+
+.reel-seeker-main
+{
+   z-index:2100;
+   height: 3px;
+   background-color:#262626;
+   position: absolute;
+   width:100vw;
+   margin-top: -2px; 
+}
+
+.seeker-bar
+{
+    background-color: white;
+    height: 3px;
+    position: absolute;
+    width: 0px;
+    transition: 1s;
+}
+

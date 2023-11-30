@@ -1,0 +1,59 @@
+.story-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: auto;
+}
+
+.story-container::-webkit-scrollbar {
+    background-color: transparent;
+}
+
+.user-status {
+    border-radius: 50%;
+    color: white;
+    height: 63px;
+    width: 63px;
+    background-image:linear-gradient(30deg,yellow,rgb(177, 10, 49),yellow,rgb(177, 10, 49),rgb(177, 10, 49));
+    padding:3px;
+}
+
+
+.follower-status {
+    border-radius: 50%;
+    color: white;
+    height: 63px;
+    width: 63px;
+    background-image:linear-gradient(30deg,yellow,rgb(177, 10, 49),yellow,rgb(177, 10, 49),rgb(177, 10, 49));
+    padding:3px;
+}
+
+.add-story-btn
+{
+    background-color: rgb(78, 132, 231);
+    color:white;
+    font-size: 20px;
+    border-radius: 50%;
+    border:none;
+    margin-top:-20px;
+    margin-left:40px;
+
+}
+
+
+.user-status img {
+    border-radius: 50%;
+}
+
+.follower-status img {
+    border-radius: 50%;
+}
+
+.user-name
+{
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}

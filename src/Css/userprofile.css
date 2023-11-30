@@ -1,0 +1,21 @@
+.name-profile
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px;
+}
+
+.name-profile div
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.name-profile span{
+    color:white;
+}
+
+
+

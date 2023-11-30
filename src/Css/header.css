@@ -1,0 +1,20 @@
+.insta-header
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px;
+}
+
+i{
+    color:white;
+    padding:0px 10px;
+    font-size: 20px;
+}
+
+.icon-container
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

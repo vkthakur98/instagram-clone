@@ -1,0 +1,127 @@
+.pf-header
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color:white;
+    padding: 10px;
+    font-size:20px;
+}
+
+.profile-pic
+{
+    border-radius: 50%;
+}
+
+.profile-pic-followers-contain
+{
+    padding: 10px;
+}
+
+
+
+.profile-pic-followers
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color:white;
+}
+
+.follower-post-count
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:220px;
+}
+
+.unit
+{
+    font-size: 14px;
+}
+
+.s-numbers
+{
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.posts
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.user-bio
+{
+    margin-top: 10px;
+    color:white;
+}
+
+.user-bio a
+{
+    text-decoration: none;
+    color:white;
+    font-weight: bold;
+}
+
+
+.edit-share-profile
+{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.edit-share-profile button
+{
+    padding: 10px;
+    color:white;
+    border-radius: 10px;
+    border:none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.following-button
+{
+    background-color: #2f2b2b;
+}
+
+.follow-button
+{
+    background-color: rgb(40, 103, 218);
+}
+
+.edit-share-profile button:nth-child(1)
+{
+   width:37vw;
+}
+
+.edit-share-profile button:nth-child(2)
+{
+   width:37vw;
+}
+
+.peoples-list
+{
+    display: flex;
+    width:95vw;
+    overflow: scroll;
+}
+
+.peoples-list-head
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px;
+}
+
+.peoples-list-head span:nth-child(2)
+{
+    color:rgb(20, 66, 150)
+}

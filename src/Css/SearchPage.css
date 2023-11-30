@@ -1,0 +1,48 @@
+.search-page-input
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.search-page-input i{
+    font-size: 13px;
+    position: absolute;
+}
+
+.search-page-input input
+{
+    width: 90vw;
+    padding:10px;
+    background-color: #2d2c2c;
+    border-radius: 10px;
+    border:none;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:white;
+}
+
+.search-page-input input:focus{
+    outline:none;
+}
+
+.explore-div
+{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.explore-div div
+{
+    height: 33vw;
+    width:33vw;
+}
+
+.explore-div div:nth-child(2)
+{
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 4;
+}

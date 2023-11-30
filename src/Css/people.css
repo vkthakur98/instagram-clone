@@ -1,0 +1,53 @@
+.people
+{
+    border:1px solid gray;
+    border-radius: 6px;
+    width:32vw;
+    padding:10px;
+    margin-left:5px;
+}
+
+.people-img img
+{
+    border-radius: 50%;
+}
+
+.follow-btn
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.follow-btn button
+{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:white;
+    background-color:rgb(42, 137, 174);
+    border:none;
+    border-radius: 5px;
+    padding: 6px;
+    width:32vw;
+}
+
+.name-status
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding:10px;
+}
+
+.people-img
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.f-status
+{
+    color:gray;
+    font-size: 13px;
+}

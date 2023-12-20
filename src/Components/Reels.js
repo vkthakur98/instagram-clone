@@ -4,8 +4,6 @@ import video from "../reels/reel1.mp4"
 import video2 from "../reels/reel2.mp4"
 import video3 from "../reels/reel3.mp4"
 
-
-
 const Reels = () => {
     //contains reel videos//
     let reel_videos;
@@ -16,30 +14,21 @@ const Reels = () => {
 
     },[])
 
-    
 
     //declaring variables for translating the videos in upper or lower dierections
     let startY,scrolled = 0,reelindex=0;
 
     //to update the seekbar width with the video's current time//
-
     const handleTimeUpdate = () =>
     {
     let videoELement = document.getElementsByTagName("video")[reelindex];
     let videoplayed = parseInt((videoELement.currentTime/videoELement.duration*100));
     document.getElementsByClassName("seeker-bar")[0].style.width=videoplayed+"vw";
     }
-
     
     document.getElementsByClassName("reel-seeker-main")[0].addEventListener("touchstart",(e)=>{
         console.log(e.touches[0].clientY)
     })
-
-
-
-    
-
-
 
     //when user will start to swipe on the screen this function will be executed//
     const handleTouchStart = (e) => {

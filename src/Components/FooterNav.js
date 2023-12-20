@@ -3,7 +3,7 @@ import "../Css/footer.css"
 import { Link } from 'react-router-dom'
 const FooterNav = () => {  
   return (
-    <div style={{background:"black",position:"fixed",bottom:"0",left:"0",zIndex:100}}>
+    <div className='footer-nav' style={{background:"black",position:"fixed",bottom:"0",left:"0",zIndex:100}}>
       <div className='reel-seeker-main'>
             <div className='seeker-bar'>
                         

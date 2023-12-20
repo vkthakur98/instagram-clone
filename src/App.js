@@ -7,6 +7,8 @@ import Reels from './Components/Reels';
 import UserProfile from './Components/UserProfile';
 import UserStatus from './Components/Context/userContext/UserStatus';
 import Viewpost from './Components/Viewpost';
+import Status from './Components/ViewStory';
+import ViewStory from './Components/ViewStory';
 function App() {
   return (
     <> 
@@ -25,6 +27,8 @@ function App() {
             <Route path='/profile' element={<Profile />} >
             </Route>
             <Route path='/reels' element={<Reels />} >
+            </Route>
+            <Route path='/status' element={<ViewStory />} >
             </Route>
           </Routes>
         </BrowserRouter>

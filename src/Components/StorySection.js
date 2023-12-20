@@ -1,9 +1,11 @@
 import React from 'react'
 import UserStatus from './UserStatus'
 import FollowerStatus from './FollowerStatus'
+import { Link,useLocation } from 'react-router-dom' 
 
 const StorySection = () => {
-
+  let location = useLocation();
+  
   const users = [
     {
       "userimg":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHo41BJ-g4wME4x1AK8ww4b3FP_kYYX2B-dg&usqp=CAU",
@@ -23,13 +25,16 @@ const StorySection = () => {
     }
   ]
 
+
   return (
     <>
     <div className='story-container'>
     <UserStatus/> 
     {
       users.map((user)=>{
-          return <FollowerStatus key={user.username} userimg={user.userimg} username={user.username} />
+          return <Link to="/status">
+          <FollowerStatus key={user.username} userimg={user.userimg} username={user.username} />
+          </Link>
       })
     }
     </div> 

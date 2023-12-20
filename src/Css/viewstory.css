@@ -1,0 +1,63 @@
+
+
+.viewstory-main img{
+    height: 90vh;
+    width: 100vw;
+}
+
+.textbox-icon-container
+{
+    background-color: transparent;
+    padding: 10px;
+}
+
+.textbox-icon-container input
+{
+    padding:12px;
+    background-color: transparent;
+    color:white;
+    border:1px solid white;
+    border-radius: 20px;
+    width: 65vw;
+}
+
+.textbox-icon-container input::placeholder
+{
+    color:white;
+    font-weight: bold;
+}
+
+.overlay-story-optios
+{
+    position: absolute;
+    height: 100vh;
+    top:0;
+    left:0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.lines
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width:95vw;
+}
+
+.line
+{
+    height: 2px;
+    width:90vw;
+    background-color: gray;
+    margin-left: 3px;
+}
+.fill-line
+{
+    background-color: white;
+    height: 2px;
+    width:0%;
+    transition: 30s;
+}

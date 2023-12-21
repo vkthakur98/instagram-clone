@@ -1,0 +1,102 @@
+.signin-signup-container-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signin-signup-container
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.signin-signup-input-fields
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.signin-signup-input-fields input{
+    margin-top:5px;
+    padding: 13px 12px 13px 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width:85vw;
+    border:1px solid gray;
+    background-color: rgb(19, 34, 14);
+    border-radius: 10px;
+    color:white;
+}
+
+.signin-signup-input-fields button{
+    background-color: rgb(28, 82, 180);
+    width: 90vw;
+    padding: 10px;
+    border: none;
+    outline: none;
+    color:white;
+    font-family: "Calibri";
+    font-weight: bold;
+    border-radius: 20px;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.signin-signup-input-fields a{
+    color:white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 5px;
+}
+
+.new-account-btn
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.new-account-btn button
+{
+    background-color: transparent;
+    border: 1px solid cornflowerblue;
+    width: 90vw;
+    padding: 10px;
+    color:cornflowerblue;
+    font-family: "Calibri";
+    font-weight: bold;
+    border-radius: 20px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+
+}
+
+
+
+
+
+.signin-signup-input-fields input::placeholder
+{
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.insta-logo
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.metalogo
+{
+    margin-top:10px;
+}

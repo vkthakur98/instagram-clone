@@ -6,9 +6,11 @@ import Profile from './Components/Profile';
 import Reels from './Components/Reels';
 import UserProfile from './Components/UserProfile';
 import UserStatus from './Components/Context/userContext/UserStatus';
-import Viewpost from './Components/Viewpost';
-import Status from './Components/ViewStory';
+import Viewpost from './Components/Viewpost'
 import ViewStory from './Components/ViewStory';
+import Signin from './Components/Signin';
+import Signup from './Components/Signup/Signup'
+
 function App() {
   return (
     <> 
@@ -16,7 +18,11 @@ function App() {
         <BrowserRouter>
           <FooterNav></FooterNav>
           <Routes>
-            <Route path='/' element={<Home />} >
+            <Route path='/' element={<Signin/>} >
+            </Route>
+            <Route path='/signup' element={<Signup/>} >
+            </Route>
+            <Route path='/home' element={<Home/>} >
             </Route>
             <Route path='/viewpost' element={<Viewpost/>} >
             </Route>

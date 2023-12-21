@@ -1,0 +1,55 @@
+input
+{
+    margin-top:5px;
+    padding: 13px 12px 13px 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width:85vw;
+    border:1px solid gray;
+    background-color: rgb(19, 34, 14);
+    border-radius: 10px;
+    color:white;
+}
+
+button
+{
+    background-color: rgb(28, 82, 180);
+    width: 90vw;
+    padding: 10px;
+    border: none;
+    outline: none;
+    color:white;
+    font-family: "Calibri";
+    font-weight: bold;
+    border-radius: 20px;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.signup
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h3{
+    color: white;
+    font-family: "Calibri";
+    font-size: 24px;
+}
+
+i{
+  margin-top:10px;
+}
+
+span{
+    color:white;
+    font-family: "Calibri";
+    margin-top:-10px;
+}
+
+.component
+{
+    padding: 10px;
+}

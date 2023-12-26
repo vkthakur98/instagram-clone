@@ -66,7 +66,8 @@ const UserStatus = (props)=>{
 
 return(
      <UserContext.Provider value={{posts,stories}}>
-        {props.children
+        {
+        props.children
         }
     </UserContext.Provider>
     )

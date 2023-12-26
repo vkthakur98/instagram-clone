@@ -9,20 +9,25 @@ import UserStatus from './Components/Context/userContext/UserStatus';
 import Viewpost from './Components/Viewpost'
 import ViewStory from './Components/ViewStory';
 import Signin from './Components/Signin';
-import Signup from './Components/Signup/Signup'
+import Signup from './Components/Signup';
+import { useRef,createRef } from 'react';
+
 
 function App() {
+
+  const navstate = createRef();
+
   return (
     <> 
       <UserStatus>
         <BrowserRouter>
-          <FooterNav></FooterNav>
+          <FooterNav ref={navstate}></FooterNav>
           <Routes>
             <Route path='/' element={<Signin/>} >
             </Route>
-            <Route path='/signup' element={<Signup/>} >
-            </Route>
             <Route path='/home' element={<Home/>} >
+            </Route>
+            <Route path='/signup' element={<Signup navbar={navstate} />} >
             </Route>
             <Route path='/viewpost' element={<Viewpost/>} >
             </Route>

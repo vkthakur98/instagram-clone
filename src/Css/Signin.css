@@ -46,6 +46,10 @@
     font-size: 18px;
 }
 
+Link{
+text-decoration: none;
+}
+
 .signin-signup-input-fields a{
     color:white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;

@@ -1,12 +1,10 @@
 import React from 'react'
 import "../Css/footer.css"
 import { Link } from 'react-router-dom'
-const FooterNav = () => {  
-  return (
-    <div className='footer-nav' style={{background:"black",position:"fixed",bottom:"0",left:"0",zIndex:100}}>
+const FooterNav = React.forwardRef((props,ref) => (  
+   <div className='footer-nav' ref={ref} style={{background:"black",position:"fixed",bottom:"0",left:"0",zIndex:100}}>
       <div className='reel-seeker-main'>
-            <div className='seeker-bar'>
-                        
+            <div className='seeker-bar'>                    
             </div>
       </div>  
         <div className='footer-icons'>
@@ -25,7 +23,6 @@ const FooterNav = () => {
        </Link> 
       </div>
     </div>
-  )
-}
+  ));
 
 export default FooterNav

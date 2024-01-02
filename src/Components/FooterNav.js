@@ -2,13 +2,13 @@ import React from 'react'
 import "../Css/footer.css"
 import { Link } from 'react-router-dom'
 const FooterNav = React.forwardRef((props,ref) => (  
-   <div className='footer-nav' ref={ref} style={{background:"black",position:"fixed",bottom:"0",left:"0",zIndex:100}}>
+   <div className='footer-nav' ref={ref} style={{background:"black",position:"fixed",bottom:"-1%",left:"0",zIndex:100}}>
       <div className='reel-seeker-main'>
             <div className='seeker-bar'>                    
             </div>
       </div>  
         <div className='footer-icons'>
-        <Link to="/">
+        <Link to="/home">
         <div><i className='fa fa-house'></i></div>        
         </Link>
        <Link to="/explore">

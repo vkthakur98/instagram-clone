@@ -14,6 +14,7 @@ const Signup = (props) => {
   const component  = useRef(new Array);  
   const input_ids = useRef(new Array);
   const userdata = useRef(new Array);
+  const errormsg = useRef(new Array);
   const count = useRef(0);
 
   useEffect(()=>{
@@ -26,28 +27,32 @@ const Signup = (props) => {
     type:"text",
     placeholder:"Enter your name",
     lable:"What is your name?",
-    value:name
+    value:name,
+    errormsg:"You would must have a name, Plese write!"
   },
   {
     elemid:1,
     type:"password",
     placeholder:"Enter your password",
     lable:"Create your password",
-    value:pwd
+    value:pwd,
+    errormsg:"Please enter a strong password"
   },
    {
     elemid:2,
     type:"text",
     placeholder:"Enter a username",
     lable:"Create a username",
-    value:uname 
+    value:uname,
+    errormsg:"Please enter a valid username" 
   },
   {
     elemid:3,
     type:"number",
     placeholder:"Enter your mobile",
     lable:"Enter your mobile no.",
-    value:mobile
+    value:mobile,
+    errormsg:"Please Enter a valid 10 digit mobile number"
   }  
 ];
   const nextField = ()=>{
@@ -60,6 +65,7 @@ const Signup = (props) => {
       input_ids.current[count.current].focus();
       input_ids.current[count.current].style.outline="1px solid red";  
       input_ids.current[count.current].style.border="1px solid red";
+      errormsg.current[count.current].innerHTML=components[count.current].errormsg;
       }
       else
       {
@@ -77,6 +83,7 @@ const Signup = (props) => {
     input_ids.current[count.current].focus();
     input_ids.current[count.current].style.outline="1px solid red";  
     input_ids.current[count.current].style.border="1px solid red";  
+    errormsg.current[count.current].innerHTML = components[count.current].errormsg;
     }
     }
     else
@@ -123,9 +130,11 @@ const Signup = (props) => {
         return (<div key={item.elemid} className='component' ref={(elem)=>{component.current.push(elem)}}>
           <h3>{item.lable}</h3>
           <input type={item.type}  placeholder={item.placeholder} ref={(inputtext)=>{input_ids.current.push(inputtext)}} 
-          value={item.value} onChange={(e)=>{changeText(e)}}
+          value={item.value} onChange={(e)=>{changeText(e)}}  
           />
+          <span style={{color:"red"}} ref={(elem)=>{errormsg.current.push(elem)}}></span>
           </div>)
+
       })
     }
     </div>

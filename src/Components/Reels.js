@@ -1,27 +1,34 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import "../Css/reels.css"
 import video from "../reels/reel1.mp4"
 import video2 from "../reels/reel2.mp4"
 import video3 from "../reels/reel3.mp4"
 
 const Reels = () => {
+    const [mute, setMutestate] = useState(false);
+    const reelvideo = useRef(new Array());
+    const reeldiv = useRef(new Array(
+    )) 
+    const muteunmuteicon = useRef("")
+    const muteunmutediv = useRef("")
+
+
     //contains reel videos//
-    let reel_videos;
+    // let reel_videos;
     //useEffect is used to play the first reel automatically//
     useEffect(() => {
-        document.getElementsByTagName("video")[0].play();
-         reel_videos = Array.from(document.getElementsByClassName("reel"));
-
-    },[])
+        reelvideo.current[0].play();
+        //  reel_videos = Array.from(document.getElementsByClassName("reel"));
+    })
 
 
     //declaring variables for translating the videos in upper or lower dierections
     let startY,scrolled = 0,reelindex=0;
-
+2
     //to update the seekbar width with the video's current time//
     const handleTimeUpdate = () =>
     {
-    let videoELement = document.getElementsByTagName("video")[reelindex];
+    let videoELement = reelvideo.current[reelindex];
     let videoplayed = parseInt((videoELement.currentTime/videoELement.duration*100));
     document.getElementsByClassName("seeker-bar")[0].style.width=videoplayed+"vw";
     }
@@ -44,25 +51,27 @@ const Reels = () => {
         scrolled = scrolled+100;
         reelindex=reelindex+1;
         console.log("Reelindex:",reelindex,"Scrolled Area:",scrolled);
-        reel_videos.forEach((reel)=>{
+        reeldiv.current.forEach((reel)=>{
             reel.style.transform="translateY(-"+scrolled+"vh";
         })
-        document.getElementsByTagName("video")[reelindex].play();
-        document.getElementsByTagName("video")[reelindex-1].pause();
+        reelvideo.current[reelindex].play();
+        reelvideo.current[reelindex-1].pause();
+
     }
      else if(scrolled_diff ===0)
      {
         //do nothing
      } 
      else if(scrolled_diff<0)
-     {
+     { 
         scrolled = scrolled-100;
         reelindex=reelindex-1;
-        reel_videos.forEach((reel)=>{
+        console.log("Reelindex:",reelindex,"Scrolled Area:",scrolled);
+        reeldiv.current.forEach((reel)=>{
             reel.style.transform="translateY(-"+scrolled+"vh";
         })
-        document.getElementsByTagName("video")[reelindex].play();
-        document.getElementsByTagName("video")[reelindex+1].pause();
+        reelvideo.current[reelindex].play();
+        reelvideo.current[reelindex+1].pause();
      }
     }
     //I am not able to scroll the video by the function touchStart and touchEnd
@@ -84,34 +93,33 @@ const Reels = () => {
             reelId: "r04",
             src: video3
         }
-
     ]
 
-    const [mute, setMutestate] = useState(false);
     const handleCLick = (e) => {
+            console.log(reeldiv.current)
         if (!mute) {
             // e.target.muted = true;
             setMutestate(true);
-            document.getElementsByClassName("mute-icon")[0].classList.remove("fa-volume-high");
-            document.getElementsByClassName("mute-icon")[0].classList.add("fa-volume-xmark");
-            document.getElementsByClassName("mute-unmute-icon")[0].style.transform="scale(1)";
-            setTimeout(()=>{
-            document.getElementsByClassName("mute-unmute-icon")[0].style.transform="scale(0)";
+            muteunmuteicon.current.classList.remove("fa-volume-high");
+            muteunmuteicon.current.classList.add("fa-volume-xmark");
+            muteunmutediv.current.style.transform="scale(1)";
+            setTimeout(()=>{ 
+            muteunmutediv.current.style.transform="scale(0)";
             },1000)
         }
         else {
-            document.getElementsByClassName("mute-icon")[0].classList.remove("fa-volume-xmark");
-            document.getElementsByClassName("mute-icon")[0].classList.add("fa-volume-high");
+            muteunmuteicon.current.classList.remove("fa-volume-xmark");
+            muteunmuteicon.current.classList.add("fa-volume-high");
             // e.target.muted = false;
             setMutestate(false);
-            document.getElementsByClassName("mute-unmute-icon")[0].style.transform="scale(1)";
+            muteunmutediv.current.style.transform="scale(1)";
             setTimeout(()=>{
-            document.getElementsByClassName("mute-unmute-icon")[0].style.transform="scale(0)";
+            muteunmutediv.current.style.transform="scale(0)";
             },1000)
         }
     }
 
-
+console.log(reeldiv)
 
     return (
         <div className='reel-videos-container'>
@@ -120,14 +128,14 @@ const Reels = () => {
                     <span>Reels</span><i className='fa fa-camera'></i>
                 </div>
             </div>
-            <div className='mute-unmute-icon'>
-                <i className='fa fa-volume-xmark mute-icon'></i>
+            <div className='mute-unmute-icon' ref={muteunmutediv}>
+                <i className='fa fa-volume-xmark mute-icon' ref={muteunmuteicon} ></i>
             </div>            
             {   
                 reelvideos.map((reel) => {
                     return( 
-                    <div className='reel' key={reel.reelId}>
-                        <video className='reel-video' src={reel.src} onTouchStart={(e)=>{handleTouchStart(e)}} onTouchEnd={(e)=>{handleTouchEnd(e)}} onClick={(e)=>{handleCLick(e)}} onTimeUpdate={()=>{handleTimeUpdate()}} loop muted={mute}  />
+                    <div className='reel' ref={(rdiv)=>{reeldiv.current.push(rdiv)}}  key={reel.reelId}>
+                        <video ref={(elem)=>{reelvideo.current.push(elem)}} className='reel-video' src={reel.src} onTouchStart={(e)=>{handleTouchStart(e)}} onTouchEnd={(e)=>{handleTouchEnd(e)}} onClick={(e)=>{handleCLick(e)}} onTimeUpdate={()=>{handleTimeUpdate()}} loop muted={mute}  />
                     </div> 
                     )
                 })

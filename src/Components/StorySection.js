@@ -32,7 +32,7 @@ const StorySection = () => {
     <UserStatus/> 
     {
       users.map((user)=>{
-          return <Link to="/status">
+          return <Link key={user.username} to="/status">
           <FollowerStatus key={user.username} userimg={user.userimg} username={user.username} />
           </Link>
       })

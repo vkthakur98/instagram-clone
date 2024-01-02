@@ -43,7 +43,7 @@ const Profile = () => {
                         <span>Full Stack Developer</span><br></br>
                         <a href='https://www.vivekcodes.com'>vivekcodes.com</a>
                         <div className='edit-share-profile-contain'>
-                            <div className='edit-share-profile'><button className='following-button'>Edit Profile</button><button className='following-button'>Share Profile</button><button className='following-button'><i className='fa-solid fa-user-plus' style={{ fontSize: "17px", padding: "0px" }}></i></button></div>
+                            <div className='edit-share-profile'><button className='following-button'>Edit Profile</button><button className='following-button'>Share Profile</button><button className='following-button' style={{width:"50px",padding:"5px"}}><i className='fa-solid fa-user-plus' style={{ fontSize: "17px", padding: "0px" }}></i></button></div>
                         </div>
                         <div className='peoples-list-head'><span>Discover people</span><span>See all</span></div>
                         <div className='peoples-list'>

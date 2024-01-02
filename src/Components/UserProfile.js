@@ -115,7 +115,7 @@ const UserProfile = (props) => {
           <span>Full Stack Developer</span><br></br>
           <a href='https://www.vivekcodes.com'>vivekcodes.com</a>
           <div className='edit-share-profile-contain'>
-            <div className='edit-share-profile'><button onClick={()=>{handleOnclick()}} className={follow ? "following-button" : "follow-button"}>{follow ? "Following" : "Follow"}<i className={follow ? "fa fa-angle-down" : ""} style={{ fontSize: "11px" }}></i></button><button className='following-button'>Message</button><button className='following-button'><i className='fa-solid fa-user-plus' style={{ fontSize: "17px", padding: "0px" }}></i></button></div>
+            <div className='edit-share-profile'><button onClick={()=>{handleOnclick()}} className={follow ? "following-button" : "follow-button"}>{follow ? "Following" : "Follow"}<i className={follow ? "fa fa-angle" : "fa fa-angle"} style={{ fontSize: "11px" }}></i></button><button className='following-button'>Message</button><button className='following-button' style={{width:"50px",padding:"5px"}}><i className='fa-solid fa-user-plus' style={{ fontSize: "17px", padding: "0px" }}></i></button></div>
           </div>
         </div>
       </div>

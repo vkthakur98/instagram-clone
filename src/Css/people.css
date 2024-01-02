@@ -23,11 +23,12 @@
 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color:white;
-    background-color:rgb(42, 137, 174);
+    background-color:rgb(42, 85, 163);
     border:none;
     border-radius: 5px;
-    padding: 6px;
-    width:32vw;
+    padding: 3px;
+    width:29vw;
+    font-size: 15px;
 }
 
 .name-status
@@ -50,4 +51,5 @@
 {
     color:gray;
     font-size: 13px;
+    margin-top: 5px;
 }

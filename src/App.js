@@ -13,6 +13,7 @@ import Signup from './Components/Signup';
 import { useRef,createRef } from 'react';
 
 
+
 function App() {
 
   const navstate = createRef();
@@ -23,7 +24,7 @@ function App() {
         <BrowserRouter>
           <FooterNav ref={navstate}></FooterNav>
           <Routes>
-            <Route path='/' element={<Signin/>} >
+            <Route path='/'   element={<Signin/>} >
             </Route>
             <Route path='/home' element={<Home/>} >
             </Route>

@@ -16,6 +16,7 @@ const Signup = (props) => {
   const userdata = useRef(new Array);
   const errormsg = useRef(new Array);
   const count = useRef(0);
+  
 
   useEffect(()=>{
     document.getElementsByClassName("footer-nav")[0].style.display="none";

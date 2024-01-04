@@ -3,6 +3,7 @@ import "../Css/reels.css"
 import video from "../reels/reel1.mp4"
 import video2 from "../reels/reel2.mp4"
 import video3 from "../reels/reel3.mp4"
+import audio_img from "../images/instalogo.png"
 
 const Reels = () => {
     const [mute, setMutestate] = useState(false);
@@ -12,13 +13,10 @@ const Reels = () => {
     const muteunmuteicon = useRef("")
     const muteunmutediv = useRef("")
 
-
-    //contains reel videos//
-    // let reel_videos;
+  
     //useEffect is used to play the first reel automatically//
     useEffect(() => {
         reelvideo.current[0].play();
-        //  reel_videos = Array.from(document.getElementsByClassName("reel"));
     })
 
 
@@ -95,29 +93,29 @@ const Reels = () => {
         }
     ]
 
-    const handleCLick = (e) => {
-            console.log(reeldiv.current)
-        if (!mute) {
-            // e.target.muted = true;
-            setMutestate(true);
-            muteunmuteicon.current.classList.remove("fa-volume-high");
-            muteunmuteicon.current.classList.add("fa-volume-xmark");
-            muteunmutediv.current.style.transform="scale(1)";
-            setTimeout(()=>{ 
-            muteunmutediv.current.style.transform="scale(0)";
-            },1000)
-        }
-        else {
-            muteunmuteicon.current.classList.remove("fa-volume-xmark");
-            muteunmuteicon.current.classList.add("fa-volume-high");
-            // e.target.muted = false;
-            setMutestate(false);
-            muteunmutediv.current.style.transform="scale(1)";
-            setTimeout(()=>{
-            muteunmutediv.current.style.transform="scale(0)";
-            },1000)
-        }
-    }
+    // const handleCLick = (e) => {
+    //         console.log(reeldiv.current)
+    //     if (!mute) {
+    //         // e.target.muted = true;
+    //         setMutestate(true);
+    //         muteunmuteicon.current.classList.remove("fa-volume-high");
+    //         muteunmuteicon.current.classList.add("fa-volume-xmark");
+    //         muteunmutediv.current.style.transform="scale(1)";
+    //         setTimeout(()=>{ 
+    //         muteunmutediv.current.style.transform="scale(0)";
+    //         },1000)
+    //     }
+    //     else {
+    //         muteunmuteicon.current.classList.remove("fa-volume-xmark");
+    //         muteunmuteicon.current.classList.add("fa-volume-high");
+    //         // e.target.muted = false;
+    //         setMutestate(false);
+    //         muteunmutediv.current.style.transform="scale(1)";
+    //         setTimeout(()=>{
+    //         muteunmutediv.current.style.transform="scale(0)";
+    //         },1000)
+    //     }
+    // }
 
 console.log(reeldiv)
 
@@ -135,7 +133,19 @@ console.log(reeldiv)
                 reelvideos.map((reel) => {
                     return( 
                     <div className='reel' ref={(rdiv)=>{reeldiv.current.push(rdiv)}}  key={reel.reelId}>
-                        <video ref={(elem)=>{reelvideo.current.push(elem)}} className='reel-video' src={reel.src} onTouchStart={(e)=>{handleTouchStart(e)}} onTouchEnd={(e)=>{handleTouchEnd(e)}} onClick={(e)=>{handleCLick(e)}} onTimeUpdate={()=>{handleTimeUpdate()}} loop muted={mute}  />
+                        <div className='reel-icons'>
+                        <div><i className="fa-regular fa-heart"></i><p>223k</p></div>
+                        <div><i className="fa-regular fa-comment"></i><p>223k</p></div>
+                        <div><i className="fa-regular fa-paper-plane"></i> <p>223k</p></div>
+                        <div><i class="fa-solid fa-ellipsis-vertical"></i></div>
+                        <div><img src={audio_img} height={35} width={35}/></div>
+                        </div>
+                        <div className='reel-maker-info'>
+                        <div>
+                            <img src={audio_img} height={35} width={35}></img><span>instagram_page</span> <button>Follow</button>
+                        </div>
+                        </div>
+                        <video ref={(elem)=>{reelvideo.current.push(elem)}} className='reel-video' src={reel.src} onTouchStart={(e)=>{handleTouchStart(e)}} onTouchEnd={(e)=>{handleTouchEnd(e)}}  onTimeUpdate={()=>{handleTimeUpdate()}} loop  />
                     </div> 
                     )
                 })

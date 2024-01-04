@@ -57,3 +57,70 @@
     border-radius: 50%;
 
 }
+
+.reel-icons
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    right:2%;
+    top:45%;
+    z-index:2100; 
+    align-items: center;
+}
+
+.reel-icons i{
+    font-size: 23px;
+}
+
+.reel-icons img
+{
+    margin-top:20px;
+}
+
+.reel-icons p{
+    margin-top: 0px;
+    margin-left:5px;
+    color:white;
+}
+
+
+.reel-maker-info
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:140%;
+    position: absolute;
+    z-index: 2100;
+    margin-left: 10px;
+}
+
+.reel-maker-info div
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reel-maker-info span
+{
+    padding: 5px;
+}
+
+
+.reel-maker-info button
+{
+    width:100px;
+    border:1px solid white;
+    background-color: transparent;
+    font-size: 15px;
+    padding: 5px ;
+    margin-top:-5px;
+    border-radius: 5px;
+}
+
+.reel-maker-info img{
+    border-radius: 50%;
+}

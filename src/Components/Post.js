@@ -25,7 +25,7 @@ const Post = (props) => {
             <div className='body-post'>
                 <img src={props.pagepic} alt='post-img' />
                 <div className='post-actions-wrap'>
-                  <div className='post-actions'><div className='post-action-lcs'><div><i className="fa-solid fa-heart"></i></div><div><i className="fa-solid fa-comment"></i></div><div><i className="fa-solid fa-paper-plane"></i></div></div><div className='post-action-save'><div><i className="fa-solid fa-bookmark"></i></div></div></div>
+                  <div className='post-actions'><div className='post-action-lcs'><div><i className="fa-regular fa-heart"></i></div><div><i className="fa-regular fa-comment"></i></div><div><i className="fa-regular fa-paper-plane"></i></div></div><div className='post-action-save'><div><i class="fa-regular fa-bookmark"></i></div></div></div>
                 </div>
            </div>
         </div>

@@ -1,4 +1,4 @@
-import React,{useRef,useState,useEffect} from 'react'
+import React,{useRef,useState} from 'react'
 import {useLocation} from "react-router-dom"
 import "../Css/signup.css"
 
@@ -17,11 +17,6 @@ const Signup = (props) => {
   const errormsg = useRef(new Array);
   const count = useRef(0);
   
-
-  useEffect(()=>{
-    document.getElementsByClassName("footer-nav")[0].style.display="none";
-  },[])
-
   //Elements properties data in array of objects
   const components = [{
     elemid:0,

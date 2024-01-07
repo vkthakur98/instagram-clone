@@ -1,10 +1,13 @@
 import React from 'react'
 import img from "../images/girlimg.jpg"
 import "../Css/people.css"
+import FooterNav from './FooterNav'
 
 
 const People = ({name,fstatus}) => {
   return (
+  <>
+  <FooterNav></FooterNav>
     <div className='people'>
         <div className='people-img'>
         <img alt='people-img' src={img} height={"80px"} width={"80px"} />
@@ -17,6 +20,7 @@ const People = ({name,fstatus}) => {
             <button>Follow</button>
         </div>
     </div>  
+    </>
   )
 }
 

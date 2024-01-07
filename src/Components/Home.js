@@ -4,11 +4,13 @@ import Header from './Header';
 import StorySection from './StorySection';
 import { useContext }  from 'react'
 import UserContext from "./Context/userContext/UserContext";
+import FooterNav from './FooterNav';
 
 const Home = () => {
   const context = useContext(UserContext);
   return (
-    <>    
+    <>  
+    <FooterNav></FooterNav>  
     <Header/>
     <StorySection/>       
     <div>

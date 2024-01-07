@@ -1,6 +1,5 @@
 import UserContext from "./UserContext";
 import axios from 'axios'
-
 const UserStatus = (props)=>{
 
   // const [posts,setPost] = useState([])

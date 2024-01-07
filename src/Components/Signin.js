@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, {useState, useRef } from 'react'
 import "../Css/Signin.css"
 import logo from '../images/instalogo.png'  
 import metalogo from "../images/metalogo.png"
@@ -27,10 +27,6 @@ const Signin = () => {
         }
     }
 
-
-    useEffect(()=>{
-        document.getElementsByClassName("footer-nav")[0].style.display="none"
-    },[])
     const location = useLocation();
 //   location.pathname==="/"?document.getElementsByClassName("footer-nav")[0].style.display="none":""
     return (

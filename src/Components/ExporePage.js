@@ -2,12 +2,15 @@ import React, { useContext } from 'react'
 import "../Css/SearchPage.css"
 import {Link} from "react-router-dom"
 import UserContext from "./Context/userContext/UserContext"
+import FooterNav from './FooterNav'
 
 
 
 const SearchPage = () => {
   const context = useContext(UserContext)
   return (
+    <>
+    <FooterNav></FooterNav>
     <div className='SearchPage' >
       <div className='search-page-input'>
       <input type='text' placeholder='Search' />
@@ -26,6 +29,7 @@ const SearchPage = () => {
         }        
       </div>   
     </div>
+    </>
   )
 }
 

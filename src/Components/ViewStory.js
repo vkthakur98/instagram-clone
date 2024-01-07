@@ -9,7 +9,6 @@ const ViewStory = () => {
   let fill_lines = document.getElementsByClassName("fill-line");
   let i = 0;
   useEffect(()=>{    
-    document.getElementsByClassName("footer-nav")[0].style.display="none";
     document.getElementsByClassName("fill-line")[0].style.width="100%";
   },[])
 

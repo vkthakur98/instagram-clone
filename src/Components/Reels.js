@@ -8,6 +8,7 @@ import FooterNav from './FooterNav'
 
 
 const Reels = () => {
+    
     const [mute, setMutestate] = useState(false);
     const reelvideo = useRef(new Array());
     const reeldiv = useRef(new Array())

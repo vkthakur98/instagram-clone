@@ -2,8 +2,8 @@ import React, { useContext , useState} from 'react'
 import "../Css/userprofile.css"
 import "../Css/profile.css"
 import img from "../images/girlimg.jpg"
-import FollowerStatus from './FollowerStatus'
-import UserContext from "./Context/userContext/UserContext"
+import FollowerStatus from '../Story/FollowerStatus'
+import UserContext from "../Context/userContext/UserContext"
 import {useLocation } from 'react-router-dom'
 
 const UserProfile = (props) => {

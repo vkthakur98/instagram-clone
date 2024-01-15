@@ -1,25 +1,22 @@
-import Home from './Components/Home';
-import FooterNav from './Components/FooterNav';
+import Home from './Components/Home/Home';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ExplorePage from './Components/ExporePage';
-import Profile from './Components/Profile';
-import Reels from './Components/Reels';
-import UserProfile from './Components/UserProfile';
+import ExplorePage from './Components/Explore/ExporePage';
+import Profile from './Components/Profiles/Profile';
+import Reels from './Components/Reels/Reels';
+import UserProfile from './Components/Profiles/UserProfile';
 import UserStatus from './Components/Context/userContext/UserStatus';
-import Viewpost from './Components/Viewpost'
-import ViewStory from './Components/ViewStory';
+import Viewpost from './Components/Post/Viewpost'
+import ViewStory from './Components/Story/ViewStory';
 import Signin from './Components/Signin';
 import Signup from './Components/Signup';
-
-
+import Messages from './Components/ChatMessage/Messages';
+import UseReference from './Components/UseReference';
 
 function App() {
-
   return (
     <> 
       <UserStatus>
         <BrowserRouter>
-          {/* <FooterNav></FooterNav> */}
           <Routes>
             <Route path='/'   element={<Signin/>} >
             </Route>
@@ -38,6 +35,10 @@ function App() {
             <Route path='/reels' element={<Reels />} >
             </Route>
             <Route path='/status' element={<ViewStory />} >
+            </Route>
+            <Route path='/messages' element={<Messages/>} >
+            </Route>
+            <Route path='/refer' element={<UseReference/>} >
             </Route>
           </Routes>
         </BrowserRouter>

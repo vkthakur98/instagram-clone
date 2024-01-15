@@ -1,5 +1,5 @@
 import React from 'react'
-import UserStatus from './UserStatus'
+import UserStatus from '../UserStatus'
 import FollowerStatus from './FollowerStatus'
 import { Link,useLocation } from 'react-router-dom' 
 

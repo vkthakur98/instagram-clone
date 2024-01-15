@@ -1,10 +1,10 @@
 import React from 'react'
-import Post from "./Post"
-import Header from './Header';
-import StorySection from './StorySection';
+import Post from "../Post/Post"
+import Header from '../Header/Header';
+import StorySection from '../Story/StorySection';
 import { useContext }  from 'react'
-import UserContext from "./Context/userContext/UserContext";
-import FooterNav from './FooterNav';
+import UserContext from "../Context/userContext/UserContext";
+import FooterNav from '../Footer/FooterNav';
 
 const Home = () => {
   const context = useContext(UserContext);

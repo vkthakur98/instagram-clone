@@ -1,5 +1,5 @@
 import { useContext,useEffect}  from 'react'
-import UserContext  from './Context/userContext/UserContext'
+import UserContext  from '../Context/userContext/UserContext'
 import img from "../images/Jin Kamaza.jpg"
 import "../Css/viewstory.css"
 

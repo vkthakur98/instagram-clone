@@ -1,0 +1,54 @@
+.message-header
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.message-header div:nth-child(1)
+{
+    width: 50vw;
+}
+
+.message-header div
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.message-header span
+{
+    font-size: 25px;
+    margin-top:5px;
+}
+
+.searchbar
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:10px;
+}
+
+.searchbar input{
+    background-color: #222121;
+    border:none;
+    padding: 10px;
+    width:90vw;
+}
+
+.searchbar input::placeholder
+{
+    color:gray
+}
+
+.msg
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+

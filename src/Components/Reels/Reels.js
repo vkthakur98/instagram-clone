@@ -4,7 +4,7 @@ import video from "../reels/reel1.mp4"
 import video2 from "../reels/reel2.mp4"
 import video3 from "../reels/reel3.mp4"
 import audio_img from "../images/instalogo.png"
-import FooterNav from './FooterNav'
+import FooterNav from '../Footer/FooterNav'
 
 
 const Reels = () => {

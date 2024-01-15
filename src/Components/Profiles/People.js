@@ -1,7 +1,7 @@
 import React from 'react'
 import img from "../images/girlimg.jpg"
 import "../Css/people.css"
-import FooterNav from './FooterNav'
+import FooterNav from '../Footer/FooterNav'
 
 
 const People = ({name,fstatus}) => {

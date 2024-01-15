@@ -7,8 +7,8 @@ import UserProfile from './Components/Profiles/UserProfile';
 import UserStatus from './Components/Context/userContext/UserStatus';
 import Viewpost from './Components/Post/Viewpost'
 import ViewStory from './Components/Story/ViewStory';
-import Signin from './Components/Signin';
-import Signup from './Components/Signup';
+import Signin from './Components/SIgninSignup/Signin';
+import Signup from './Components/SIgninSignup/Signup';
 import Messages from './Components/ChatMessage/Messages';
 import UseReference from './Components/UseReference';
 

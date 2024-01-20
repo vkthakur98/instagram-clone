@@ -1,40 +1,30 @@
-import { useContext,useEffect}  from 'react'
+import { useContext,useEffect, useRef, useState}  from 'react'
 import UserContext  from '../Context/userContext/UserContext'
-import img from "../images/Jin Kamaza.jpg"
-import "../Css/viewstory.css"
+import img from "../../images/Jin Kamaza.jpg"
+import "../../Css/viewstory.css"
 
 const ViewStory = () => {
  //declaring variables 
   const Context = useContext(UserContext)
-  let fill_lines = document.getElementsByClassName("fill-line");
-  let i = 0;
-  useEffect(()=>{    
-    document.getElementsByClassName("fill-line")[0].style.width="100%";
-  },[])
+  let fill_lines = useRef(new Array());
+  const time = 10000
+  const [index,setIndex] = useState(0);
 
-  console.log("This is fill line:",fill_lines)
-  window.onclick = (e)=>{
-    if(e.pageX>(370/2))
+  useEffect(()=>{
+    fill_lines.current[index].style.width="100%"   
+  })
+
+  let intrvl =  setInterval(()=>{
+    setIndex(index+1)
+    if(index<=2)
     {
-      i++;
-      fill_lines[i].style.width="100%";
-      fill_lines[i-1].style.width="100%";  
-      fill_lines[i-1].style.transition="none";
-      console.log(i)
+        fill_lines.current[index].style.width="100%"
     }
-    
-
-    else{
-        i--;
-        document.getElementsByClassName("fill-line")[i].style.width="0%";
-        document.getElementsByClassName("fill-line")[i].style.transition="30s";
-        document.getElementsByClassName("fill-line")[i+1].style.width="0%";
-        document.getElementsByClassName("fill-line")[i+1].style.transition="none";
-        console.log(i)
-    }
-    
-  }
-      
+    else
+    {
+        clearInterval(intrvl)
+    }  
+},time)
 
   return (
     <div className='viewstory-main'>
@@ -43,12 +33,14 @@ const ViewStory = () => {
       <div>
         <div className='lines'>
         {
-          Context.stories.map(()=>{
-           return  <div className='line'>
-            <div className='fill-line'> 
-
+          Context.stories.map((item)=>{
+           return(  
+           <div key={Math.random()}  className='line'>
+            <div ref={(item)=>fill_lines.current.push(item)} className='fill-line'>
+              {item.username}
             </div>
             </div>
+            )
           })
         }
         </div>

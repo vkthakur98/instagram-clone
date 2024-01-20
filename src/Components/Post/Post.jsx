@@ -1,5 +1,5 @@
 import {Link} from "react-router-dom"
-import "../Css/post.css"
+import "../../Css/post.css"
 const Post = (props) => {
   const userData = {
     name:props.pagename,

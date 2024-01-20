@@ -1,6 +1,6 @@
 import Home from './Components/Home/Home';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ExplorePage from './Components/Explore/ExporePage';
+import ExplorePage from './Components/SearchPage/ExporePage';
 import Profile from './Components/Profiles/Profile';
 import Reels from './Components/Reels/Reels';
 import UserProfile from './Components/Profiles/UserProfile';
@@ -10,7 +10,6 @@ import ViewStory from './Components/Story/ViewStory';
 import Signin from './Components/SIgninSignup/Signin';
 import Signup from './Components/SIgninSignup/Signup';
 import Messages from './Components/ChatMessage/Messages';
-import UseReference from './Components/UseReference';
 
 function App() {
   return (
@@ -37,8 +36,6 @@ function App() {
             <Route path='/status' element={<ViewStory />} >
             </Route>
             <Route path='/messages' element={<Messages/>} >
-            </Route>
-            <Route path='/refer' element={<UseReference/>} >
             </Route>
           </Routes>
         </BrowserRouter>

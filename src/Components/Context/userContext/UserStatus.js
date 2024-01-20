@@ -51,7 +51,7 @@ const UserStatus = (props)=>{
         [
           {
             storyno:0,
-            username:"username1",
+            username:"username0",
             picture:"picture",
           },
           {

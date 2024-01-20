@@ -1,6 +1,6 @@
 import React from 'react'
-import img from "../images/girlimg.jpg"
-import "../Css/people.css"
+import img from "../../images/girlimg.jpg"
+import "../../Css/people.css"
 import FooterNav from '../Footer/FooterNav'
 
 

@@ -1,7 +1,7 @@
 import React, {useState, useRef } from 'react'
-import "../Css/Signin.css"
-import logo from '../images/instalogo.png'  
-import metalogo from "../images/metalogo.png"
+import "../../Css/Signin.css"
+import logo from '../../images/instalogo.png'  
+import metalogo from "../../images/metalogo.png"
 import { Link,useLocation } from 'react-router-dom'
 const Signin = () => {
     const uname_input = useRef("")

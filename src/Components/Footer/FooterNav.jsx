@@ -1,5 +1,5 @@
 import React from 'react'
-import "../Css/footer.css"
+import "../../Css/footer.css"
 import { Link } from 'react-router-dom'
 const FooterNav = React.forwardRef((props,ref) => (  
    <div className='footer-nav' ref={ref} style={{background:"black",position:"fixed",bottom:"-1%",left:"0",zIndex:100}}>

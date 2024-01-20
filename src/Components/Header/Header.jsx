@@ -1,6 +1,6 @@
 import React from 'react'
-import "../Css/header.css"
-import logo_img from  "../images/Logo-Instagram.png"
+import "../../Css/header.css"
+import logo_img from  "../../images/Logo-Instagram.png"
 import { Link } from 'react-router-dom'
 
 const Header = () => {

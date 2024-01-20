@@ -1,5 +1,5 @@
 import React from 'react'
-import "../Css/profile.css"
+import "../../Css/profile.css"
 import People from './People'
 
 const Profile = () => {
@@ -11,18 +11,22 @@ const Profile = () => {
 
     const peoples = [
         {
+            pid:"2ds32erw3",
             name: "Smriti Jha",
             fstatus: false,
         },
         {
+            pid:"2sffs323",
             name: "Ravi Kumar",
             fstatus: true,
         },
         {
+            pid:"2ds32dsd3",
             name: "Vishal Verma",
             fstatus: false,
         },
         {
+            pid:"2ds32dkjs",
             name: "Neeraj",
             fstatus: true,
         }
@@ -49,7 +53,7 @@ const Profile = () => {
                         <div className='peoples-list'>
                             {
                                 peoples.map((people) => {
-                                    return <People name={people.name} fstatus={people.fstatus} />
+                                    return <People name={people.name} fstatus={people.fstatus} key={people.pid} />
                                 })
                             }
                         </div>

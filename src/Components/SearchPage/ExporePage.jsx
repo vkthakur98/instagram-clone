@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
-import "../Css/SearchPage.css"
 import {Link} from "react-router-dom"
 import UserContext from "../Context/userContext/UserContext"
 import FooterNav from '../Footer/FooterNav'
+import "../../Css/SearchPage.css"
 
 const SearchPage = () => {
   const context = useContext(UserContext)

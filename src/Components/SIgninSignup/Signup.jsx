@@ -1,10 +1,9 @@
 import React,{useRef,useState} from 'react'
 import {useLocation} from "react-router-dom"
-import "../Css/signup.css"
+import "../../Css/signup.css"
 
 
 const Signup = (props) => {
-
   const location = useLocation();
   //Using useref to store the components which will be renderd with map method
   const [name,setName] = useState("");

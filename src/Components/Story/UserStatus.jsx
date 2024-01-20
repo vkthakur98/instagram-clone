@@ -1,6 +1,6 @@
 import React from 'react'
-import "../Css/userstatus.css"
-import userimg from "../images/Jin Kamaza.jpg"
+import "../../Css/userstatus.css"
+import userimg from "../../images/Jin Kamaza.jpg"
 
 const UserStatus = () => {
   return (

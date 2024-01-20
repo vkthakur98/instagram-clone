@@ -1,5 +1,5 @@
 import React from 'react'
-import "../Css/userstatus.css"
+import "../../Css/userstatus.css"
 // import userimg from "../images/girlimg.jpg"
 
 const FollowerStatus = ({userimg,username}) => {

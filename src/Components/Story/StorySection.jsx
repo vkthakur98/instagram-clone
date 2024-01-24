@@ -7,7 +7,6 @@ import { Link,useLocation } from 'react-router-dom'
 const StorySection = () => {
   let location = useLocation();
   const Context = useContext(UserContext)
-  
     return (
     <>
     <div className='story-container'>
@@ -15,7 +14,7 @@ const StorySection = () => {
     {
       Context.stories.map((user,index)=>{
           return <Link key={user.username} to="/status">
-          <FollowerStatus key={user[index].username} userimg={user[index].picture} username={user[index].username} />
+          <FollowerStatus key={user[index].username} userimg={user[0].userpic} username={user[index].username} />
           </Link>
       })
     }

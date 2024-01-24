@@ -80,7 +80,7 @@ const ViewStory = () => {
         }
         </div>
         <div style={{display:'flex',alignItems:"center"}}>
-          <img src={Context.posts[userstoryindex.current].pageprofile_pic} style={{height:"40px",width:"40px",borderRadius:"50%",padding:"10px"}}></img><span style={{fontWeight:"bold"}} >{Context.stories[userstoryindex.current][0].username}</span>
+          <img src={Context.stories[userstoryindex.current][0].userpic} style={{height:"40px",width:"40px",borderRadius:"50%",padding:"10px"}}></img><span style={{fontWeight:"bold"}} >{Context.stories[userstoryindex.current][0].username}</span>
         </div>
               </div>
     <div className='replyToStory'>

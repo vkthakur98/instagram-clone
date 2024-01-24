@@ -50,5 +50,40 @@
     align-items: center;
 }
 
+.msg
+{
+    margin-top:10px;
+}
 
+.msg-content
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+}
+
+.msg-content i
+{
+    color:rgb(103, 98, 98)
+}
+
+.msg-content img
+{
+    padding: 5px;
+}
+
+.profile-pic-name
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.username-msg
+{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
 

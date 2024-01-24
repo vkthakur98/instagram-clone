@@ -1,4 +1,7 @@
-
+.viewstory-main
+{
+    transition: 5s;
+}
 
 .viewstory-main img{
     height: 90vh;

@@ -1,7 +1,9 @@
 import React from 'react'
 import "../../Css/messages.css"
+import {useNavigate} from "react-router-dom"
 
 const Messages = () => {
+  const navigate = useNavigate()
 
   let messages = [
     {
@@ -30,18 +32,23 @@ const Messages = () => {
     }
   ]
 
+  const openChat = (name)=>{
+    navigate(`./chat/${name}`)
+  }
+
+
   return (
     <div>
       <div className='message-header'>
-        <div><i className='fa fa-arrow-left'></i><span>_Vk_thakur</span></div><div><i className="fa-solid fa-video"></i><i className="fa-regular fa-pen-to-square"></i></div>
+        <div><i className='fa fa-arrow-left' onClick={()=>navigate("/home")}></i><span>_Vk_thakur</span></div><div><i className="fa-solid fa-video"></i><i className="fa-regular fa-pen-to-square"></i></div>
       </div>
       <div className='searchbar'>
         <input type='text' placeholder='Search'/>
       </div>
-      {
-        messages.map((msg_item)=>{
+      {       
+ messages.map((msg_item)=>{
           return(
-          <div className='msg' key={msg_item.chat_id}>
+          <div className='msg'  key={msg_item.chat_id} onClick={()=>{openChat(msg_item.name)}}>
           <div className='msg-content'><div className='profile-pic-name'><img className='profile-pic' src={msg_item.photo} alt='profile-pic' height={60} width={60}></img><div className='username-msg'><span style={{color:"white"}}>{msg_item.name}</span><span style={{color:"gray",marginTop:"3px"}} >{msg_item.message}</span></div></div><i className='fa fa-camera'></i></div>
           </div> )
         })

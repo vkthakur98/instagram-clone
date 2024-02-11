@@ -10,6 +10,8 @@ import ViewStory from './Components/Story/ViewStory';
 import Signin from './Components/SIgninSignup/Signin';
 import Signup from './Components/SIgninSignup/Signup';
 import Messages from './Components/ChatMessage/Messages';
+import Chat from './Components/ChatMessage/Chat'
+
 
 function App() {
   return (
@@ -33,9 +35,11 @@ function App() {
             </Route>
             <Route path='/reels' element={<Reels />} >
             </Route>
-            <Route path='/status' element={<ViewStory />} >
+            <Route path='/status/:username/:ival' element={<ViewStory />} >
             </Route>
             <Route path='/messages' element={<Messages/>} >
+            </Route>
+            <Route path='/messages/chat/:userId' element={<Chat/>} >
             </Route>
           </Routes>
         </BrowserRouter>
@@ -43,5 +47,4 @@ function App() {
     </>
 );
 }
-
 export default App;

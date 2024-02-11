@@ -2,12 +2,13 @@ import React, {useState, useRef } from 'react'
 import "../../Css/Signin.css"
 import logo from '../../images/instalogo.png'  
 import metalogo from "../../images/metalogo.png"
-import { Link,useLocation } from 'react-router-dom'
+import { Link,useLocation,useNavigate } from 'react-router-dom'
 const Signin = () => {
     const uname_input = useRef("")
     const pwd_input = useRef("")
     const [uname,setUname] = useState("");
     const [password,setPwd] = useState("");
+    const navigate = useNavigate();
 
     const getUnamePwd = (e)=>{
         e.target.type==="text"?setUname(e.target.value):setPwd(e.target.value)
@@ -16,7 +17,7 @@ const Signin = () => {
     const loginToInsta = ()=>{
         if(uname==="Vivek" && password==="Vk98")
         {
-            window.location.href="/home"
+            navigate("/home")
         }
         else if(uname==="" || password=="")
         {

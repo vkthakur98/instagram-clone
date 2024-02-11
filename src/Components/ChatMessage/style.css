@@ -1,0 +1,7 @@
+.message:nth-child(even){
+margin-left: 90%;
+}
+
+p{
+    color:white;
+}

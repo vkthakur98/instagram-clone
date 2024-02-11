@@ -3,7 +3,7 @@ import "../../Css/userprofile.css"
 import "../../Css/profile.css"
 import img from "../../images/girlimg.jpg"
 import FollowerStatus from '../Story/FollowerStatus'
-import UserContext from "../Context/userContext/UserContext"
+import UserContext from "../Context/userContext/Context"
 import {useLocation } from 'react-router-dom'
 
 const UserProfile = (props) => {

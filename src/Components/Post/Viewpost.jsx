@@ -1,7 +1,7 @@
 import React from 'react'
 import Post from "./Post"
 import { useContext }  from 'react'
-import UserContext from "../Context/userContext/UserContext";
+import UserContext from "../Context/userContext/Context";
 import { useLocation } from 'react-router-dom';
 
 const Viewpost = () => {

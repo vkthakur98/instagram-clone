@@ -1,0 +1,32 @@
+.message{
+    padding: 0px 5px 0px 5px;
+}
+
+/* .message:nth-child(odd)
+{
+    margin-left:60vw;
+} */
+
+
+.message-sender
+{
+    padding: 10px;
+    background-color: purple;
+    color:white;
+    border-radius: 20px 20px 0px 20px;
+    margin-left:80%;
+    min-width: auto;
+    max-width: 30vw;
+}
+
+.message-reciever
+{
+    padding: 10px;
+    background-color: purple;
+    color:white;
+    border-radius: 20px 20px 20px 20px;
+    min-width: auto;
+    max-width: 30vw;
+}
+
+

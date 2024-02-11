@@ -1,11 +1,12 @@
 import React,{useRef,useState} from 'react'
-import {useLocation} from "react-router-dom"
+import {Navigate, useLocation,useNavigate} from "react-router-dom"
 import "../../Css/signup.css"
 
 
 const Signup = (props) => {
   const location = useLocation();
   //Using useref to store the components which will be renderd with map method
+  const navigate = useNavigate()
   const [name,setName] = useState("");
   const [pwd,setPwd] = useState("");
   const [uname,setUname] = useState("");
@@ -66,7 +67,7 @@ const Signup = (props) => {
       {
         userdata.current.push(input_ids.current[count.current].value)
         component.current[count.current].style.display="none";
-        count.current<3?component.current[count.current+1].style.display="block":window.location="/"
+        count.current<3?component.current[count.current+1].style.display="block":navigate("/")
         count.current++ 
         console.log(count.current)
         // console.log(count.current)

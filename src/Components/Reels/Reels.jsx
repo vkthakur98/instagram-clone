@@ -20,8 +20,10 @@ const Reels = () => {
 
     //useEffect is used to play the first reel automatically//
     useEffect(() => {
-        reelvideo.current[0].play();
+        reelvideo.current[0].play()
     })
+
+    window.scrollTo(0,0)
 
 
     //declaring variables for translating the videos in upper or lower dierections

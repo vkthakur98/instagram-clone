@@ -14,10 +14,9 @@
     color: white;
     height: 63px;
     width: 63px;
-    background-image:linear-gradient(30deg,yellow,rgb(177, 10, 49),yellow,rgb(177, 10, 49),rgb(177, 10, 49));
+    /* background-image:linear-gradient(30deg,yellow,rgb(177, 10, 49),yellow,rgb(177, 10, 49),rgb(177, 10, 49)); */
     padding:3px;
 }
-
 
 .follower-status {
     border-radius: 50%;

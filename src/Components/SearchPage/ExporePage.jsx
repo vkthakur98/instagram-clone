@@ -10,7 +10,7 @@ const SearchPage = () => {
   return (
     <>
     <FooterNav></FooterNav>
-    <div className='SearchPage' >
+      <div className='SearchPage' >
       <div className='search-page-input'>
       <input type='text' placeholder='Search' />
       </div>

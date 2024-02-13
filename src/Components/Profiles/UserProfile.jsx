@@ -4,12 +4,13 @@ import "../../Css/profile.css"
 import img from "../../images/girlimg.jpg"
 import FollowerStatus from '../Story/FollowerStatus'
 import UserContext from "../Context/userContext/Context"
-import {useLocation } from 'react-router-dom'
+import {Link, useLocation, useNavigate } from 'react-router-dom'
 
 const UserProfile = (props) => {
 
   const { state } = useLocation();
   const context = useContext(UserContext)
+  const navigate = useNavigate()
   let currentuser = {}
 
   context.posts.forEach((post)=>{
@@ -102,7 +103,7 @@ const UserProfile = (props) => {
 
   return (
     <div>
-      <div className='name-profile' ><div><i className='fa fa-arrow-left'></i><span>{state.name}</span></div><div><i className='fa-solid fa-bell'></i><i className="fa-solid fa-ellipsis-vertical"></i>
+      <div className='name-profile' ><div><i onClick={()=>navigate(-1)} className='fa fa-arrow-left'></i><span>{state.name}</span></div><div><i className='fa-solid fa-bell'></i><i className="fa-solid fa-ellipsis-vertical"></i>
       </div>
       </div>
       <div className='profile-pic-followers-contain'>
@@ -121,8 +122,8 @@ const UserProfile = (props) => {
       </div>
       <div className='story-container'>
         {
-          users.map((user) => {
-            return <FollowerStatus key={user.username} userimg={user.userimg} username={user.username} />
+          users.map((user,index) => {
+            return <FollowerStatus key={index} userimg={user.userimg} username={user.username} />
           })
         }
       </div>
@@ -131,15 +132,19 @@ const UserProfile = (props) => {
           <div>Post</div><div></div><div></div>
         </div>
         <div className='posts'>
-          <div className='explore-div'>
-            {
-              posts.map((post) => {
-                return (<div className='explore-item'>
-                  <img height={"125px"} width={"125px"} alt='post' src={post.pageprofile_pic} />
-                </div>)
-              })
-            }
-          </div>
+        <div className='explore-div'>
+        {
+          context.posts.map((post)=>{
+           return(
+           <Link to="/viewpost" state={{postid:post.postid}} key={post.postid} >
+           <div className='explore-item'>
+              <img height={"125px"} width={"125px"} alt='post' src={post.pageprofile_pic} />
+           </div>
+           </Link>           
+           ) 
+          })
+        }        
+      </div>
         </div>
       </div>
     </div>

@@ -7,9 +7,8 @@ import audio_img from "../../images/instalogo.png"
 import FooterNav from '../Footer/FooterNav'
 
 
-const Reels = () => {
-    
-    const [mute, setMutestate] = useState(false);
+const Reels = () => {    
+    const mute = useRef(false)
     const reelvideo = useRef(new Array());
     const reeldiv = useRef(new Array())
     const seeker = useRef(new Array())
@@ -46,10 +45,8 @@ const Reels = () => {
     const handleTouchEnd = (e) => {
         let scrolled_diff = startY - e.changedTouches[0].clientY;
         if (scrolled_diff > 0) {
-            // console.log("Touchend ClientY:"+e.changedTouches[0].clientY+", Difference:"+(startY-e.changedTouches[0].clientY))
             scrolled = scrolled + 100;
             reelindex = reelindex + 1;
-            // console.log("Reelindex:", reelindex, "Scrolled Area:", scrolled);
             reeldiv.current.forEach((reel) => {
                 reel.style.transform = "translateY(-" + scrolled + "vh";
             })
@@ -62,7 +59,6 @@ const Reels = () => {
         else if (scrolled_diff < 0) {
             scrolled = scrolled - 100;
             reelindex = reelindex - 1;
-            // console.log("Reelindex:", reelindex, "Scrolled Area:", scrolled);
             reeldiv.current.forEach((reel) => {
                 reel.style.transform = "translateY(-" + scrolled + "vh";
             })
@@ -70,7 +66,7 @@ const Reels = () => {
             reelvideo.current[reelindex + 1].pause();
         }
     }
-    //I am not able to scroll the video by the function touchStart and touchEnd
+
 
     const reelvideos = [
         {
@@ -104,32 +100,31 @@ const Reels = () => {
 
 
 
-    // const handleCLick = (e) => {
-    //         console.log(reeldiv.current)
-    //     if (!mute) {
-    //         // e.target.muted = true;
-    //         setMutestate(true);
-    //         muteunmuteicon.current.classList.remove("fa-volume-high");
-    //         muteunmuteicon.current.classList.add("fa-volume-xmark");
-    //         muteunmutediv.current.style.transform="scale(1)";
-    //         setTimeout(()=>{ 
-    //         muteunmutediv.current.style.transform="scale(0)";
-    //         },1000)
-    //     }
-    //     else {
-    //         muteunmuteicon.current.classList.remove("fa-volume-xmark");
-    //         muteunmuteicon.current.classList.add("fa-volume-high");
-    //         // e.target.muted = false;
-    //         setMutestate(false);
-    //         muteun                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   mutediv.current.style.transform="scale(1)";
-    //         setTimeout(()=>{
-    //         muteunmutediv.current.style.transform="scale(0)";
-    //         },1000)
-    //     }
-    // }
+    const handleCLick = (e) => {
+            console.log(reeldiv.current)
+        if (!mute.current) {
+            e.target.muted = true;
+            muteunmuteicon.current.classList.remove("fa-volume-high");
+            muteunmuteicon.current.classList.add("fa-volume-xmark");
+            muteunmutediv.current.style.transform="scale(1)";
+            mute.current=true
+            setTimeout(()=>{ 
+            muteunmutediv.current.style.transform="scale(0)";
+            },1000)
+        }
+        else {
+            muteunmuteicon.current.classList.remove("fa-volume-xmark");
+            muteunmuteicon.current.classList.add("fa-volume-high");
+            mute.current=false
+            e.target.muted = false;
+            muteunmutediv.current.style.transform="scale(1)";
+            setTimeout(()=>{
+            muteunmutediv.current.style.transform="scale(0)";
+            },1000)
+        }
+    }
 
     
-
     return (
         <>
             <FooterNav></FooterNav>
@@ -146,7 +141,7 @@ const Reels = () => {
                     reelvideos.map((reel) => {
                         return (
                             <>
-                                <div className='reel' ref={(rdiv) => { reeldiv.current.push(rdiv) }} onDoubleClick={() => { handleDoubleClick() }} key={reel.reelId}>
+                                <div className='reel' ref={(rdiv) => { reeldiv.current.push(rdiv) }} onDoubleClick={() => { handleDoubleClick() }} key={reel.reelId} >
                                     <div className='reel-icons'>
                                         <div><i className="fa-regular fa-heart"></i><p>223k</p></div>
                                         <div><i className="fa-regular fa-comment"></i><p>223k</p></div>
@@ -159,7 +154,7 @@ const Reels = () => {
                                             <img src={audio_img} height={35} width={35}></img><span>instagram_page</span> <button>Follow</button>
                                         </div>
                                     </div>
-                                    <video ref={(elem) => { reelvideo.current.push(elem) }} className='reel-video' src={reel.src} onTouchStart={(e) => { handleTouchStart(e) }} onTouchEnd={(e) => { handleTouchEnd(e) }} onTimeUpdate={() => { handleTimeUpdate() }} loop />
+                                    <video ref={(elem) => { reelvideo.current.push(elem) }} className='reel-video' src={reel.src} onTouchStart={(e) => { handleTouchStart(e) }} onTouchEnd={(e) => { handleTouchEnd(e) }} onTimeUpdate={() => { handleTimeUpdate() }} onClick={(e)=>{handleCLick(e)}} muted={mute.current} loop />
                                 </div>
                                 <div ref={(elem) => { seeker.current.push(elem) }} style={{ width: "100vw", marginTop: "-55px", position: "absolute", backgroundColor: "gray", zIndex: "2500" }} onTouchEnd={(e) => { handleSeekEnd(e) }} className='reel-seeker-main' key={reelindex}>
                                     <div ref={(elem) => { progress.current.push(elem) }} style={{ width: "0vw", backgroundColor: "white" }} className='seeker-bar'>

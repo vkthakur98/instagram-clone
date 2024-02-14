@@ -7,20 +7,20 @@ import { useLocation, useNavigate } from 'react-router-dom';
 const Viewpost = () => {
   const context = useContext(UserContext);
   const { state } = useLocation();
-  const navigate = useNavigate()
-  
-  let currentuser = {}
+  const navigate = useNavigate()  
+  let currentuser = new Object()
   const span_style = {
     color: "white",
     fontFamily: "verdana",
     fontWeight: "Bold"
   }
+  
   context.posts.forEach((post) => {
     if (post.postid === state.postid) {
       currentuser = post;
+      // const post_index = context.posts.indexOf(post)
     }
   })
-
 
   return (
     <>
@@ -33,6 +33,7 @@ const Viewpost = () => {
             <Post pagename={currentuser.pagename} pagepic={currentuser.pageprofile_pic} postid={state.postid} ></Post>
             {
               context.posts.map((post) => {
+                if(post === currentuser) return null
                 return <Post pagename={post.pagename} pagepic={post.pageprofile_pic} postid={post.postid} key={post.postid}></Post>
               })
             }

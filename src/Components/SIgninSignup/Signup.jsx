@@ -1,10 +1,9 @@
 import React,{useRef,useState} from 'react'
-import {Navigate, useLocation,useNavigate} from "react-router-dom"
+import {useNavigate} from "react-router-dom"
 import "../../Css/signup.css"
 
 
 const Signup = (props) => {
-  const location = useLocation();
   //Using useref to store the components which will be renderd with map method
   const navigate = useNavigate()
   const [name,setName] = useState("");
@@ -16,6 +15,7 @@ const Signup = (props) => {
   const userdata = useRef(new Array);
   const errormsg = useRef(new Array);
   const count = useRef(0);
+  const saveobj = new Object()
   
   //Elements properties data in array of objects
   const components = [{
@@ -24,7 +24,8 @@ const Signup = (props) => {
     placeholder:"Enter your name",
     lable:"What is your name?",
     value:name,
-    errormsg:"You would must have a name, Plese write!"
+    errormsg:"You would must have a name, Plese write!",
+    savelabel:"name"
   },
   {
     elemid:1,
@@ -32,7 +33,8 @@ const Signup = (props) => {
     placeholder:"Enter your password",
     lable:"Create your password",
     value:pwd,
-    errormsg:"Please enter a strong password"
+    errormsg:"Please enter a strong password",
+    savelabel:"password"
   },
    {
     elemid:2,
@@ -40,7 +42,8 @@ const Signup = (props) => {
     placeholder:"Enter a username",
     lable:"Create a username",
     value:uname,
-    errormsg:"Please enter a valid username" 
+    errormsg:"Please enter a valid username",
+    savelabel:"username"
   },
   {
     elemid:3,
@@ -48,7 +51,8 @@ const Signup = (props) => {
     placeholder:"Enter your mobile",
     lable:"Enter your mobile no.",
     value:mobile,
-    errormsg:"Please Enter a valid 10 digit mobile number"
+    errormsg:"Please Enter a valid 10 digit mobile number",
+    savelabel:"mobile"
   }  
 ];
   const nextField = ()=>{
@@ -69,23 +73,24 @@ const Signup = (props) => {
         component.current[count.current].style.display="none";
         count.current<3?component.current[count.current+1].style.display="block":navigate("/")
         count.current++ 
-        console.log(count.current)
         // console.log(count.current)
-        console.log(userdata.current)
-    
+        // console.log(count.current)
+        // console.log(userdata.current)
+        localStorage.setItem("userdata",userdata.current)
       }
-       }
-    else{
-    input_ids.current[count.current].focus();
-    input_ids.current[count.current].style.outline="1px solid red";  
-    input_ids.current[count.current].style.border="1px solid red";  
-    errormsg.current[count.current].innerHTML = components[count.current].errormsg;
-    }
-    }
-    else
-    {
-    
-    }
+      }
+      else
+      {
+        input_ids.current[count.current].focus();
+        input_ids.current[count.current].style.outline="1px solid red";  
+        input_ids.current[count.current].style.border="1px solid red";  
+        errormsg.current[count.current].innerHTML = components[count.current].errormsg;
+      }
+      }
+      else
+      {
+      //do nothing
+      }
   }
 
   const previousField = ()=>{

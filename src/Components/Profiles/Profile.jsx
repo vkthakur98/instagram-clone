@@ -14,21 +14,25 @@ const Profile = () => {
             pid:"2ds32erw3",
             name: "Smriti Jha",
             fstatus: false,
+            profile_pic:"https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=600"
         },
         {
             pid:"2sffs323",
             name: "Ravi Kumar",
             fstatus: true,
+            profile_pic:"https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=600"
         },
         {
             pid:"2ds32dsd3",
             name: "Vishal Verma",
             fstatus: false,
+            profile_pic:"https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         },
         {
             pid:"2ds32dkjs",
-            name: "Neeraj",
+            name: "Nisha Parcha",
             fstatus: true,
+            profile_pic:"https://images.pexels.com/photos/943084/pexels-photo-943084.jpeg?auto=compress&cs=tinysrgb&w=600"
         }
     ]
     return (
@@ -53,7 +57,7 @@ const Profile = () => {
                         <div className='peoples-list'>
                             {
                                 peoples.map((people) => {
-                                    return <People name={people.name} fstatus={people.fstatus} key={people.pid} />
+                                    return <People name={people.name} fstatus={people.fstatus} key={people.pid} profile_pic={people.profile_pic} />
                                 })
                             }
                         </div>
